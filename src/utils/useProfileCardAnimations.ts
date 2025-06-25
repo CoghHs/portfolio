@@ -1,24 +1,46 @@
-import { MotionValue, useTransform } from "framer-motion";
+import { useTransform, MotionValue } from "framer-motion";
 
-export function useProfileCardAnimations(
-  scrollYProgress: MotionValue<number>,
-  count: number
-) {
-  const baseStart = 0.55;
+export function useProfileCardTransforms(scrollYProgress: MotionValue<number>) {
+  const base = 0.55;
   const range = 0.07;
 
-  const animations = [];
+  const card1 = {
+    opacity: useTransform(scrollYProgress, [base, base + range], [0, 1]),
+    y: useTransform(scrollYProgress, [base, base + range], [40, 0]),
+    scale: useTransform(scrollYProgress, [base, base + range], [0.9, 1]),
+  };
 
-  for (let i = 0; i < count; i++) {
-    const start = baseStart + range * i;
-    const end = start + range;
+  const card2 = {
+    opacity: useTransform(
+      scrollYProgress,
+      [base + range, base + range * 2],
+      [0, 1]
+    ),
+    y: useTransform(scrollYProgress, [base + range, base + range * 2], [40, 0]),
+    scale: useTransform(
+      scrollYProgress,
+      [base + range, base + range * 2],
+      [0.9, 1]
+    ),
+  };
 
-    animations.push({
-      opacity: useTransform(scrollYProgress, [start, end], [0, 1]),
-      y: useTransform(scrollYProgress, [start, end], [40, 0]),
-      scale: useTransform(scrollYProgress, [start, end], [0.9, 1]),
-    });
-  }
+  const card3 = {
+    opacity: useTransform(
+      scrollYProgress,
+      [base + range * 2, base + range * 3],
+      [0, 1]
+    ),
+    y: useTransform(
+      scrollYProgress,
+      [base + range * 2, base + range * 3],
+      [40, 0]
+    ),
+    scale: useTransform(
+      scrollYProgress,
+      [base + range * 2, base + range * 3],
+      [0.9, 1]
+    ),
+  };
 
-  return animations;
+  return [card1, card2, card3];
 }

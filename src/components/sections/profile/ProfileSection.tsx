@@ -1,12 +1,12 @@
 "use client";
 
-import { useMemo, useRef } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { profileInfo, profileQuestions } from "./profileData";
-import { useProfileCardAnimations } from "@/utils/useProfileCardAnimations";
+import { useProfileCardTransforms } from "@/utils/useProfileCardAnimations";
 
 export default function ProfileSection() {
   const containerRef = useRef(null);
@@ -34,10 +34,7 @@ export default function ProfileSection() {
     [0.95, 1]
   );
 
-  const cardAnimations = useProfileCardAnimations(
-    scrollYProgress,
-    profileQuestions.length
-  );
+  const cardAnimations = useProfileCardTransforms(scrollYProgress);
 
   return (
     <section ref={containerRef} className="relative min-h-[350vh]">

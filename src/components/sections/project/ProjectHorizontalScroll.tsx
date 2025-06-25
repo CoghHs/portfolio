@@ -73,7 +73,7 @@ export default function ProjectHorizontalScroll({ project }: Props) {
                 className="w-[80vw] h-[85vh] object-cover rounded-xl shadow-xl"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
+                transition={{ duration: 0.5 }}
               />
             ))}
           </motion.div>

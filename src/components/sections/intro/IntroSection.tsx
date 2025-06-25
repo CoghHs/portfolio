@@ -12,6 +12,18 @@ export default function IntroSection() {
   const setIntroDone = useIntroStore((s) => s.setIntroDone);
 
   useEffect(() => {
+    if (phase !== "done") {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [phase]);
+
+  useEffect(() => {
     const introDuration = introTexts.length * 800 + 800;
 
     const toOutro = setTimeout(() => {

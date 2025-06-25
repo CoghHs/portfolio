@@ -1,6 +1,6 @@
 "use client";
 
-import { skillsData } from "@/data/skillsData";
+import { skillsData } from "@/components/sections/skills/skillsData";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import SkillCategory from "./SkillsCategory";

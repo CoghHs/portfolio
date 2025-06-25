@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { projectsData } from "@/data/projectData";
+import { projectsData } from "@/components/sections/project/projectData";
 import ProjectIntroSection from "./ProjectIntro";
 import ProjectHorizontalScroll from "./ProjectHorizontalScroll";
 

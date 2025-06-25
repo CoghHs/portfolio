@@ -4,6 +4,7 @@ import { Project } from "@/types/project";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
+import ProjectDetailInfoSection from "./PorjectDetailInfo";
 
 export default function ProjectDetailButton({
   project,
@@ -106,46 +107,20 @@ export default function ProjectDetailButton({
                   </div>
                 </section>
 
-                {Array.isArray(project.technologies) &&
-                  project.technologies.length > 0 && (
-                    <section className="border-b border-gray-300 pb-4">
-                      <h3 className="text-2xl font-semibold mb-4">기술 스택</h3>
-                      <ul className="flex flex-wrap gap-3 text-sm text-gray-700">
-                        {project.technologies.map((tech, i) => (
-                          <li
-                            key={i}
-                            className="bg-gray-200 px-3 py-1 rounded-md"
-                          >
-                            {tech}
-                          </li>
-                        ))}
-                      </ul>
-                    </section>
-                  )}
-
-                {Array.isArray(project.features) &&
-                  project.features.length > 0 && (
-                    <section className="border-b border-gray-300 pb-4">
-                      <h3 className="text-2xl font-semibold mb-4">주요 기능</h3>
-                      <ul className="list-decimal pl-5 space-y-2 text-lg text-gray-800 leading-relaxed">
-                        {project.features.map((feat, i) => (
-                          <li key={i}>{feat}</li>
-                        ))}
-                      </ul>
-                    </section>
-                  )}
-
-                {Array.isArray(project.improvements) &&
-                  project.improvements.length > 0 && (
-                    <section className="border-b border-gray-300 pb-4">
-                      <h3 className="text-2xl font-semibold mb-4">개선 사항</h3>
-                      <ul className="list-disc pl-5 space-y-2 text-lg text-gray-800 leading-relaxed">
-                        {project.improvements.map((item, i) => (
-                          <li key={i}>{item}</li>
-                        ))}
-                      </ul>
-                    </section>
-                  )}
+                <ProjectDetailInfoSection
+                  title="기술 스택"
+                  items={project.technologies}
+                  type="tag"
+                />
+                <ProjectDetailInfoSection
+                  title="주요 기능"
+                  items={project.features}
+                  type="decimal"
+                />
+                <ProjectDetailInfoSection
+                  title="개선 사항"
+                  items={project.improvements}
+                />
               </div>
             </motion.div>
           </>

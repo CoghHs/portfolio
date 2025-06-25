@@ -114,7 +114,7 @@ export const projectsData: Project[] = [
       "prisma migrate deploy 스크립트를 build 환경에 포함하여 마이그레이션 오류 해결",
     ],
     github: "https://github.com/CoghHs/Ogam-point",
-    link: "https://ogam-point.vercel.app/?key=bbibbi",
+    link: "https://ogam-point.vercel.app/",
   },
   {
     id: 4,

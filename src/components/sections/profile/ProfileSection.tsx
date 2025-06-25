@@ -1,12 +1,12 @@
-// app/components/sections/profile/ProfileSection.tsx
 "use client";
 
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { profileInfo, profileQuestions } from "./profileData";
+import { useProfileCardAnimations } from "@/utils/useProfileCardAnimations";
 
 export default function ProfileSection() {
   const containerRef = useRef(null);
@@ -34,18 +34,10 @@ export default function ProfileSection() {
     [0.95, 1]
   );
 
-  const cardAnimations = profileQuestions.map((_, index) => {
-    const baseStart = 0.55;
-    const range = 0.07;
-    const start = baseStart + range * index;
-    const end = start + range;
-
-    return {
-      opacity: useTransform(scrollYProgress, [start, end], [0, 1]),
-      y: useTransform(scrollYProgress, [start, end], [40, 0]),
-      scale: useTransform(scrollYProgress, [start, end], [0.9, 1]),
-    };
-  });
+  const cardAnimations = useProfileCardAnimations(
+    scrollYProgress,
+    profileQuestions.length
+  );
 
   return (
     <section ref={containerRef} className="relative min-h-[350vh]">

@@ -1,4 +1,3 @@
-// components/project/ProjectInfoSection.tsx
 type Props = {
   title: string;
   items: string[];

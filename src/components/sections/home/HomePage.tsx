@@ -1,4 +1,3 @@
-// app/components/sections/home/HomeSection.tsx
 "use client";
 
 import {
@@ -10,8 +9,8 @@ import {
 import { useRef, useMemo } from "react";
 import { useIntroStore } from "@/store/introStore";
 import { splitText } from "@/utils/splitText";
-import IntroHeadline from "./IntroHeadLine";
 import ScrollIndicator from "./ScrollIndicator";
+import IntroHeadline from "./IntroHeadline";
 
 const headline = "프론트엔드 개발자";
 const nameText = "박형석입니다.";

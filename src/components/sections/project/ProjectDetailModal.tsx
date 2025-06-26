@@ -18,11 +18,11 @@ export default function ProjectDetailButton({
   const padded = String(project.index + 1).padStart(2, "0");
 
   return (
-    <div className="absolute sm:mt-12 sm:right-12 bottom-40 left-12 z-50">
+    <div className="absolute mt-18 sm:mt-12 right-12 z-50">
       {!isOpen && (
         <motion.button
           onClick={() => setIsOpen(true)}
-          className="w-12 h-12 rounded-full bg-white/30 text-white text-xl flex items-center justify-center"
+          className="sm:w-12 sm:h-12 w-10 h-10 rounded-full bg-white/30 text-white text-xl flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           whileHover={{ scale: 1.1, rotate: 90 }}
@@ -66,7 +66,7 @@ export default function ProjectDetailButton({
               <motion.button
                 whileHover={{ scale: 1.1, rotate: 90 }}
                 onClick={() => setIsOpen(false)}
-                className="fixed top-33 left-11 sm:mt-10 sm:top-10 sm:right-12 w-12 h-12 rounded-full bg-black/50 text-white text-sm flex items-center justify-center z-50"
+                className="fixed mt-0 sm:mt-10 top-10 right-12 sm:w-12 sm:h-12 w-10 h-10 rounded-full bg-black/50 text-white text-sm flex items-center justify-center z-50"
               >
                 <ImCross />
               </motion.button>

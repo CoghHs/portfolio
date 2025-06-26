@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧑‍💻 Portfolio — 프톤트엔드 개발자 포트폴리오 사이트
 
-## Getting Started
+프론트엔드 개발자 박형석의 포트폴리오 웹사이트입니다.  
+인터랙션 중심의 구성과 스크롤 애니메이션을 통해  
+사용자의 몰입도를 높이고, 프로젝트 경험을 효과적으로 전달하는 데 집중했습니다.
 
-First, run the development server:
+---
+
+## 🎯 기획 의도
+
+이 포트폴리오 사이트는,
+**사용자에게 자연스럽고 집중도 높은 흐름을 제공하는** 것을 목표로 기획되었습니다.
+
+특히, **스크롤 기반 애니메이션**과 콘텐츠를 통해  
+제 경험과 가치관을 보다 명확하게 전달할 수 있도록 구성했습니다.
+
+---
+
+## ⚙️ 사용 기술 스택
+
+| 분야           | 기술                                                                 |
+|----------------|----------------------------------------------------------------------|
+| Frontend       | Next.js 15 (App Router), React 19, TypeScript                        |
+| Styling        | Tailwind CSS, Framer Motion                                          |
+| Animation      | Framer Motion, useScroll, useTransform 등 다양한 스크롤 트리거 활용 |
+| 상태 관리       | React useState, Zustand                                               |
+| 배포           | Vercel                                                               |
+
+---
+
+## 📌 주요 기능
+
+- **스크롤 기반 소개 애니메이션**  
+  - 자기소개, 프로젝트를 자연스럽게 흐르는 애니메이션으로 표현
+
+- **프로젝트 상세 보기 모달**  
+  - 클릭 시 각 프로젝트의 상세 정보 및 이미지 확인 가능
+  - 각 프로젝트는 실제 **배포 링크**, **기능 시연 이미지**, **해결 경험을 포함한 설명**으로 구성되어 있습니다.
+
+- **반응형 디자인**  
+
+- **접근성과 퍼포먼스를 고려한 구성**
+
+---
+
+## ⚒️ 트러블슈팅 (문제 해결)
+
+- **스크롤 위치에 따라 이미지가 끊기던 문제**  
+  → useScroll + useTransform + useSpring 조합으로 부드러운 이미지 전환 구현
+
+- **모바일에서 이미지가 잘리던 현상**  
+  → Tailwind 반응형 유틸을 활용한 `object-contain` 조건 처리로 자연스럽게 대응
+
+---
+
+## 🔮 향후 개발 계획
+
+- 반응형 UI 개선 (모바일에서 더 직관적인 흐름 설계)
+- 라이트 모드 지원
+- 애니메이션 관련 custom hook 추출 및 재사용성 개선
+
+---
+
+## 🧪 실행 방법
 
 ```bash
+# 로컬 개발 실행
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

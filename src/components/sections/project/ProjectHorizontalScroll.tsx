@@ -29,7 +29,7 @@ export default function ProjectHorizontalScroll({ project }: Props) {
   const x = useTransform(
     smoothScroll,
     [0, 1],
-    ["0%", `-${(project.detailImages.length - 1) * 110}%`]
+    ["0%", `-${(project.detailImages.length - 1) * 90}%`]
   );
 
   const isInView = useInView(containerRef, { amount: 0.1 });
@@ -70,7 +70,7 @@ export default function ProjectHorizontalScroll({ project }: Props) {
                 key={i}
                 src={src}
                 alt={`${project.title} image ${i}`}
-                className="w-[80vw] h-[85vh] object-cover rounded-xl shadow-xl"
+                className="w-full h-auto object-contain sm:w-[80vw] sm:h-[85vh] sm:object-cover rounded-xl shadow-xl"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}

@@ -19,7 +19,7 @@ export default function ConnectSection() {
       id="connect"
       ref={ref}
       style={{ y, opacity, scale }}
-      className="min-h-screen flex flex-col items-center justify-center text-white text-center space-y-6 relative"
+      className="min-h-screen flex flex-col items-center justify-center text-white text-center space-y-6 relative px-10 sm:px-0"
     >
       <h2 className="text-4xl md:text-5xl font-bold ">감사합니다</h2>
 

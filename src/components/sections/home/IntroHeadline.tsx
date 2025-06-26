@@ -29,7 +29,7 @@ export default function IntroHeadline({
 }) {
   return (
     <motion.h1
-      className="text-5xl sm:text-6xl md:text-7xl font-light mb-6 tracking-tight"
+      className="text-4xl sm:text-6xl md:text-7xl font-light mb-6 tracking-tight"
       variants={containerVariants}
       initial="initial"
       animate="animate"

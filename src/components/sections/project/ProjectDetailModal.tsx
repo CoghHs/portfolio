@@ -18,7 +18,7 @@ export default function ProjectDetailButton({
   const padded = String(project.index + 1).padStart(2, "0");
 
   return (
-    <div className="absolute mt-12 right-12 z-50">
+    <div className="absolute sm:mt-12 sm:right-12 bottom-40 left-12 z-50">
       {!isOpen && (
         <motion.button
           onClick={() => setIsOpen(true)}
@@ -39,7 +39,7 @@ export default function ProjectDetailButton({
               animate={{ opacity: 1, scale: 100, borderRadius: "50%" }}
               exit={{ opacity: 0.8, scale: 0 }}
               transition={{ duration: 1 }}
-              className="fixed top-20 right-12 w-12 h-12 bg-white z-10"
+              className="fixed top-0 right-12 w-12 h-12 bg-white z-10"
             />
 
             <motion.div
@@ -50,14 +50,14 @@ export default function ProjectDetailButton({
               className="fixed inset-0 z-20 p-10 ml-4 overflow-y-auto text-black"
             >
               <div className="absolute left-6 z-30 text-black flex items-center mt-3">
-                <h2 className="text-[7rem] font-bold text-black leading-none text-dark-glow">
+                <h2 className="text-[4rem] sm:text-[7rem] font-bold text-black leading-none text-dark-glow">
                   {padded}
                 </h2>
-                <div className="ml-11">
-                  <h2 className="text-4xl font-bold tracking-wide text-dark-glow">
+                <div className="ml-4 sm:ml-11">
+                  <h2 className="text-lg sm:text-4xl font-bold tracking-wide text-dark-glow">
                     {project.title}
                   </h2>
-                  <p className="text-xl text-gray-600 mt-4 text-dark-glow">
+                  <p className="text-sm sm:text-xl text-gray-600 mt-0 sm:mt-4 text-dark-glow">
                     {project.description}
                   </p>
                 </div>
@@ -66,7 +66,7 @@ export default function ProjectDetailButton({
               <motion.button
                 whileHover={{ scale: 1.1, rotate: 90 }}
                 onClick={() => setIsOpen(false)}
-                className="fixed mt-10 top-10 right-12 w-12 h-12 rounded-full bg-black/50 text-white text-sm flex items-center justify-center z-50"
+                className="fixed top-33 left-11 sm:mt-10 sm:top-10 sm:right-12 w-12 h-12 rounded-full bg-black/50 text-white text-sm flex items-center justify-center z-50"
               >
                 <ImCross />
               </motion.button>

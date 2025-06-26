@@ -16,21 +16,22 @@ export default function ProfileSection() {
     offset: ["start start", "end end"],
   });
 
-  const lineHeight = useTransform(scrollYProgress, [0, 0.5], ["0%", "100%"]);
-  const profileTitleY = useTransform(scrollYProgress, [0.45, 0.5], [-40, 0]);
+  // 등장 시점 조정
+  const lineHeight = useTransform(scrollYProgress, [0, 0.4], ["0%", "100%"]);
+  const profileTitleY = useTransform(scrollYProgress, [0.35, 0.45], [-40, 0]);
   const profileTitleOpacity = useTransform(
     scrollYProgress,
-    [0.45, 0.5],
+    [0.35, 0.45],
     [0, 1]
   );
-  const contentOpacity = useTransform(scrollYProgress, [0.5, 0.55], [0, 1]);
-  const contentY = useTransform(scrollYProgress, [0.5, 0.55], [40, 0]);
+  const contentOpacity = useTransform(scrollYProgress, [0.4, 0.5], [0, 1]);
+  const contentY = useTransform(scrollYProgress, [0.4, 0.5], [40, 0]);
 
-  const profileCardOpacity = useTransform(scrollYProgress, [0.5, 0.65], [0, 1]);
-  const profileCardY = useTransform(scrollYProgress, [0.5, 0.65], [40, 0]);
+  const profileCardOpacity = useTransform(scrollYProgress, [0.4, 0.55], [0, 1]);
+  const profileCardY = useTransform(scrollYProgress, [0.4, 0.55], [40, 0]);
   const profileCardScale = useTransform(
     scrollYProgress,
-    [0.5, 0.65],
+    [0.4, 0.55],
     [0.95, 1]
   );
 
@@ -65,7 +66,7 @@ export default function ProfileSection() {
             y: profileCardY,
             scale: profileCardScale,
           }}
-          className="flex flex-col md:flex-row items-center justify-center gap-10 pb-12 pt-30"
+          className="flex flex-col md:flex-row items-center justify-center gap-10 pb-16 pt-24 sm:pt-30"
         >
           <div className="w-[180px] h-[240px] md:w-[260px] md:h-[360px] relative rounded-lg overflow-hidden shadow-md">
             <Image
@@ -81,21 +82,21 @@ export default function ProfileSection() {
             {profileInfo.bio.map((paragraph, idx) => (
               <p
                 key={idx}
-                className="text-white text-base leading-relaxed max-w-xl"
+                className="text-sm sm:text-base leading-relaxed max-w-xl text-white"
               >
                 {paragraph}
               </p>
             ))}
-            <div className="flex gap-6 text-white">
-              <div className="pt-2 text-sm flex items-center">
-                <FaGithub className="size-8" />
+            <div className="flex items-center sm:flex-row gap-2 sm:gap-6 text-white mt-14 sm:mt-4">
+              <div className="text-sm flex items-center">
+                <FaGithub className="size-6 sm:size-8" />
                 <div className="flex flex-col ml-2">
                   <span>Github</span>
                   <span>{profileInfo.contact.github}</span>
                 </div>
               </div>
-              <div className="pt-2 text-sm flex items-center">
-                <FaLocationDot className="size-8" />
+              <div className="text-sm flex items-center">
+                <FaLocationDot className="size-6 sm:size-8" />
                 <div className="flex flex-col ml-2">
                   <span>Location</span>
                   <span>{profileInfo.contact.location}</span>
@@ -105,7 +106,7 @@ export default function ProfileSection() {
           </div>
         </motion.div>
 
-        <div className="flex flex-col gap-10 max-w-4xl mx-auto">
+        <div className="flex flex-col gap-6 sm:gap-10 max-w-4xl mx-auto mt-0 sm:mt-0 pb-[20vh]">
           {profileQuestions.map(({ title, text }, index) => (
             <motion.div
               key={index}
@@ -114,10 +115,12 @@ export default function ProfileSection() {
                 y: cardAnimations[index].y,
                 scale: cardAnimations[index].scale,
               }}
-              className="space-y-4 bg-white/10 backdrop-blur-md px-8 py-6 rounded-2xl shadow-md"
+              className="space-y-4 bg-white/10 backdrop-blur-md px-6 sm:px-8 py-6 sm:py-8 rounded-2xl shadow-md"
             >
-              <h3 className="text-2xl font-semibold text-white">{title}</h3>
-              <p className="whitespace-pre-line text-base leading-relaxed text-white/90">
+              <h3 className="text-xl sm:text-2xl font-semibold text-white">
+                {title}
+              </h3>
+              <p className="whitespace-pre-line text-sm sm:text-base leading-relaxed text-white/90">
                 {text}
               </p>
             </motion.div>

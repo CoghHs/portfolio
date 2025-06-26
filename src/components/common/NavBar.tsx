@@ -57,23 +57,24 @@ export default function Navigation() {
       initial={{ opacity: 0, y: -40 }}
       animate={controls}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 flex justify-between items-center px-8 py-4 z-30 font-light"
+      className="fixed top-0 left-0 right-0 flex justify-between items-center px-4 sm:px-8 py-3 sm:py-4 z-30 font-light"
     >
       <motion.div>
         <Link
           href="#top"
           onClick={(e) => handleScroll(e, "top")}
-          className="text-xl tracking-widest text-white cursor-pointer"
+          className="text-lg sm:text-xl tracking-wide sm:tracking-widest text-white cursor-pointer"
         >
           COGH
         </Link>
       </motion.div>
-      <div className="flex gap-8">
+
+      <div className="flex gap-4 sm:gap-8">
         {navItems.map((item) => (
           <div key={item.name} className="relative">
             <Link
               href={item.href}
-              className="text-white/80 hover:text-white text-sm transition-colors"
+              className="text-xs sm:text-sm text-white/80 hover:text-white transition-colors"
               onClick={(e) => handleScroll(e, item.href.substring(1))}
             >
               {item.name}

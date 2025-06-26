@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import BgPhoto from "@/components/effect/BgPhoto";
+import BgPhoto from "@/components/effects/BgPhoto";
+import { ScrollToTop } from "@/components/effects/ScrollToTop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className="scroll-smooth">
-      <body className={`${inter.className} antialiased bg-black`}>
+      <body
+        className={`${inter.className} antialiased font-sans bg-black scrollbar-hide`}
+      >
         <div id="top" className="absolute top-0" />
+        <ScrollToTop />
         <BgPhoto />
         {children}
       </body>

@@ -35,7 +35,7 @@ export const projectsData: Project[] = [
       "IntersectionObserver와 상태 관리로 프로젝트 번호가 자연스럽게 오르는 로직 구현",
     ],
     github: "https://github.com/CoghHs/portfolio",
-    link: "https://cogh-portfolio.vercel.app/",
+    link: "https://portfolio-coghhs-projects.vercel.app/",
   },
   {
     id: 2,

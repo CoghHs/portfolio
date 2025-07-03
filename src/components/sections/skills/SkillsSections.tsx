@@ -30,7 +30,7 @@ export default function SkillsSection() {
           SKILLS
         </h2>
         <p className="mt-4 text-lg text-sky-400 drop-shadow-sm">
-          제가 다뤄본 있는 기술들입니다
+          제가 다뤄본 기술들입니다
         </p>
       </motion.div>
 

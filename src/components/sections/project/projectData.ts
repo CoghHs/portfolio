@@ -3,6 +3,43 @@ import { Project } from "@/types/project";
 export const projectsData: Project[] = [
   {
     id: 1,
+    title: "OGAM POINT",
+    description:
+      "요가 회원의 포인트 적립/차감/만료를 효율적으로 관리하는 어드민 웹 앱입니다.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "React Query",
+      "Tailwind CSS",
+      "Prisma",
+      "PostgreSQL",
+    ],
+    image: "/images/ogam1.png",
+    detailImages: [
+      "/images/ogam1.png",
+      "/images/ogam2.png",
+      "/images/ogam3.png",
+      "/images/ogam4.png",
+    ],
+    features: [
+      "회원 등록 및 수정 / 포인트 적립, 차감, 만료 관리",
+      "포인트 만료 내역 시각화",
+      "탭 UI를 통한 내역 필터링",
+      "실시간 데이터 반영을 위한 React Query 적용",
+      "반응형 UI 및 접근성 고려",
+    ],
+    purpose:
+      "요가원의 적립금 관리 프로세스를 디지털화하여, 회원별 포인트 흐름을 실시간으로 확인하고 처리할 수 있는 효율적인 관리자용 플랫폼을 만들었습니다.",
+    improvements: [
+      "만료 포인트를 총 적립금에서 제외되도록 처리 로직 수정 및 회색 표시로 시각화",
+      "React Query의 invalidateQueries를 활용해 포인트 내역 실시간 반영",
+      "prisma migrate deploy 스크립트를 build 환경에 포함하여 마이그레이션 오류 해결",
+    ],
+    github: "https://github.com/CoghHs/Ogam-point",
+    link: "https://ogam-point.vercel.app/",
+  },
+  {
+    id: 2,
     title: "PORTFOLIO",
     description:
       "스크롤 기반 인터랙션과 부드러운 애니메이션이 적용된 포트폴리오 웹사이트입니다.",
@@ -38,7 +75,7 @@ export const projectsData: Project[] = [
     link: "https://portfolio-coghhs-projects.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "CROGH",
     description:
       "그림 연습에 최적화된 심플하고 직관적인 크로키 타이머 플랫폼입니다.",
@@ -80,43 +117,6 @@ export const projectsData: Project[] = [
     link: "https://crogh.vercel.app/",
   },
   {
-    id: 3,
-    title: "OGAM POINT",
-    description:
-      "요가 회원의 포인트 적립/차감/만료를 효율적으로 관리하는 어드민 웹 앱입니다.",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "React Query",
-      "Tailwind CSS",
-      "Prisma",
-      "PostgreSQL",
-    ],
-    image: "/images/ogam1.png",
-    detailImages: [
-      "/images/ogam1.png",
-      "/images/ogam2.png",
-      "/images/ogam3.png",
-      "/images/ogam4.png",
-    ],
-    features: [
-      "회원 등록 및 수정 / 포인트 적립, 차감, 만료 관리",
-      "포인트 만료 내역 시각화",
-      "탭 UI를 통한 내역 필터링",
-      "실시간 데이터 반영을 위한 React Query 적용",
-      "반응형 UI 및 접근성 고려",
-    ],
-    purpose:
-      "요가원의 적립금 관리 프로세스를 디지털화하여, 회원별 포인트 흐름을 실시간으로 확인하고 처리할 수 있는 효율적인 관리자용 플랫폼을 만들었습니다.",
-    improvements: [
-      "만료 포인트를 총 적립금에서 제외되도록 처리 로직 수정 및 회색 표시로 시각화",
-      "React Query의 invalidateQueries를 활용해 포인트 내역 실시간 반영",
-      "prisma migrate deploy 스크립트를 build 환경에 포함하여 마이그레이션 오류 해결",
-    ],
-    github: "https://github.com/CoghHs/Ogam-point",
-    link: "https://ogam-point.vercel.app/",
-  },
-  {
     id: 4,
     title: "BOOK",
     description:
@@ -140,7 +140,7 @@ export const projectsData: Project[] = [
       "App Router를 활용해 카테고리별 페이지 구조를 명확히 분리",
       "간결한 UI 설계를 통해 사용자 탐색 흐름을 직관적으로 구성",
     ],
-    github: "hhttps://github.com/CoghHs/next14-books",
+    github: "https://github.com/CoghHs/next14-books",
     link: "https://next14-books-alpha.vercel.app/",
   },
 ];

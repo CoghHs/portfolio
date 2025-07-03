@@ -7,7 +7,7 @@ export const profileInfo = {
     "활발하고 선한 성격으로 새로운 환경에 빠르게 적응하며, 사용자의 니즈를 이해하고 공감하는 개발자가 되기 위해 노력합니다.",
   ],
   contact: {
-    github: "cogh.dev@gmail.com",
+    github: "https://github.com/CoghHs",
     location: "경기도 용인시 기흥구",
   },
 };

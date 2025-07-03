@@ -8,6 +8,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { profileInfo, profileQuestions } from "./profileData";
 import { useProfileCardTransforms } from "@/utils/useProfileCardAnimations";
 import SkipScrollButton from "@/components/common/SkipScrollButton";
+import Link from "next/link";
 
 export default function ProfileSection() {
   const containerRef = useRef(null);
@@ -92,7 +93,9 @@ export default function ProfileSection() {
                 <FaGithub className="size-6 sm:size-8" />
                 <div className="flex flex-col ml-2">
                   <span>Github</span>
-                  <span>{profileInfo.contact.github}</span>
+                  <Link href={profileInfo.contact.github}>
+                    <span>{profileInfo.contact.github}</span>
+                  </Link>
                 </div>
               </div>
               <div className="text-sm flex items-center">

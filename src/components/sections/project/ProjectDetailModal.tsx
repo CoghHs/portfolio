@@ -22,7 +22,7 @@ export default function ProjectDetailButton({
       {!isOpen && (
         <motion.button
           onClick={() => setIsOpen(true)}
-          className="sm:w-12 sm:h-12 w-10 h-10 rounded-full bg-white/30 text-white text-xl flex items-center justify-center"
+          className="sm:w-16 sm:h-16 w-10 h-10 rounded-full bg-black/50 text-white text-2xl flex items-center justify-center shadow-xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           whileHover={{ scale: 1.1, rotate: 90 }}
@@ -37,9 +37,9 @@ export default function ProjectDetailButton({
             <motion.div
               initial={{ opacity: 0.8, scale: 0, borderRadius: "50%" }}
               animate={{ opacity: 1, scale: 100, borderRadius: "50%" }}
-              exit={{ opacity: 0.8, scale: 0 }}
+              exit={{ opacity: 0.8, scale: 0, borderRadius: "50%" }}
               transition={{ duration: 1 }}
-              className="fixed top-0 right-12 w-12 h-12 bg-white z-10"
+              className="fixed top-20 right-14 w-12 h-12 bg-white z-10"
             />
 
             <motion.div
@@ -66,7 +66,7 @@ export default function ProjectDetailButton({
               <motion.button
                 whileHover={{ scale: 1.1, rotate: 90 }}
                 onClick={() => setIsOpen(false)}
-                className="fixed mt-0 sm:mt-10 top-10 right-12 sm:w-12 sm:h-12 w-10 h-10 rounded-full bg-black/50 text-white text-sm flex items-center justify-center z-50"
+                className="fixed mt-0 sm:mt-10 top-8 right-12 sm:w-16 sm:h-16 w-10 h-10 rounded-full bg-black/50 text-white text-lg flex items-center justify-center z-50"
               >
                 <ImCross />
               </motion.button>

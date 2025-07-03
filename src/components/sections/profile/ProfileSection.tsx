@@ -1,12 +1,13 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { profileInfo, profileQuestions } from "./profileData";
 import { useProfileCardTransforms } from "@/utils/useProfileCardAnimations";
+import SkipScrollButton from "@/components/common/SkipScrollButton";
 
 export default function ProfileSection() {
   const containerRef = useRef(null);
@@ -16,7 +17,6 @@ export default function ProfileSection() {
     offset: ["start start", "end end"],
   });
 
-  // 등장 시점 조정
   const lineHeight = useTransform(scrollYProgress, [0, 0.4], ["0%", "100%"]);
   const profileTitleY = useTransform(scrollYProgress, [0.35, 0.45], [-40, 0]);
   const profileTitleOpacity = useTransform(
@@ -106,7 +106,7 @@ export default function ProfileSection() {
           </div>
         </motion.div>
 
-        <div className="flex flex-col gap-6 sm:gap-10 max-w-4xl mx-auto mt-0 sm:mt-0 pb-[20vh]">
+        <div className="flex flex-col gap-6 sm:gap-10 max-w-4xl mx-auto mt-0 sm:mt-0">
           {profileQuestions.map(({ title, text }, index) => (
             <motion.div
               key={index}
@@ -115,7 +115,7 @@ export default function ProfileSection() {
                 y: cardAnimations[index].y,
                 scale: cardAnimations[index].scale,
               }}
-              className="space-y-4 bg-white/10 backdrop-blur-md px-6 sm:px-8 py-6 sm:py-8 rounded-2xl shadow-md"
+              className="space-y-4 bg-white/10 backdrop-blur-md px-6 sm:px-8 py-6 sm:py-8 rounded-2xl shadow-md border border-white/10"
             >
               <h3 className="text-xl sm:text-2xl font-semibold text-white">
                 {title}
@@ -125,6 +125,10 @@ export default function ProfileSection() {
               </p>
             </motion.div>
           ))}
+        </div>
+
+        <div className="w-full flex justify-center py-60">
+          <SkipScrollButton targetId="projects" />
         </div>
       </motion.div>
     </section>

@@ -8,7 +8,7 @@ export const profileInfo = {
   ],
   contact: {
     github: "cogh.dev@gmail.com",
-    location: "cogh.dev@gmail.com",
+    location: "경기도 용인시 기흥구",
   },
 };
 

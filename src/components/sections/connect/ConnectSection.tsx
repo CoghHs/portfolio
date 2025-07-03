@@ -26,7 +26,7 @@ export default function ConnectSection() {
       <p className="text-lg md:text-xl leading-relaxed">
         기능 구현에 그치지 않고,
         <br className="hidden md:block" />
-        사용자 경험과 디자인의 균형을 함께 고민합니다.
+        사용자 경험과 프로덕트의 퍼포먼스를 함께 고민합니다.
       </p>
 
       <p className="text-lg md:text-xl leading-relaxed">

@@ -35,7 +35,7 @@ export default function ProjectIntroSection({ index, project }: Props) {
     >
       <motion.div
         style={{ y: ySmooth, opacity }}
-        className="absolute left-10 mt-22 sm:mt-0 text-[4rem] sm:text-[7rem] font-bold text-dark-glow"
+        className="absolute left-10 mt-22 sm:mt-0 text-[4rem] sm:text-[7rem] font-bold text-very-dark-glow"
       >
         {padded}
       </motion.div>
@@ -44,10 +44,10 @@ export default function ProjectIntroSection({ index, project }: Props) {
         style={{ y: ySmooth, opacity }}
         className="absolute mt-22 sm:mt-0 left-24 p-10 sm:p-0 sm:left-52 w-[70%] sm:w-auto"
       >
-        <h2 className="text-xl sm:text-4xl font-bold tracking-wide text-dark-glow">
+        <h2 className="text-xl sm:text-4xl font-bold tracking-wide text-very-dark-glow">
           {project.title}
         </h2>
-        <p className="mt-2 sm:mt-4 text-sm sm:text-xl font-semibold text-dark-glow">
+        <p className="mt-2 sm:mt-4 text-sm sm:text-xl font-bold text-very-dark-glow">
           {project.description}
         </p>
       </motion.div>

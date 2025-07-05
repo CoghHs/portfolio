@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
@@ -18,25 +18,23 @@ export default function ProfileSection() {
     offset: ["start start", "end end"],
   });
 
-  const lineHeight = useTransform(scrollYProgress, [0, 0.4], ["0%", "100%"]);
-  const profileTitleY = useTransform(scrollYProgress, [0.35, 0.45], [-40, 0]);
-  const profileTitleOpacity = useTransform(
-    scrollYProgress,
-    [0.35, 0.45],
-    [0, 1]
-  );
-  const contentOpacity = useTransform(scrollYProgress, [0.4, 0.5], [0, 1]);
-  const contentY = useTransform(scrollYProgress, [0.4, 0.5], [40, 0]);
+  const smoothScroll = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 20,
+    mass: 0.5,
+  });
 
-  const profileCardOpacity = useTransform(scrollYProgress, [0.4, 0.55], [0, 1]);
-  const profileCardY = useTransform(scrollYProgress, [0.4, 0.55], [40, 0]);
-  const profileCardScale = useTransform(
-    scrollYProgress,
-    [0.4, 0.55],
-    [0.95, 1]
-  );
+  const lineHeight = useTransform(smoothScroll, [0, 0.4], ["0%", "100%"]);
+  const profileTitleY = useTransform(smoothScroll, [0.35, 0.45], [-40, 0]);
+  const profileTitleOpacity = useTransform(smoothScroll, [0.35, 0.45], [0, 1]);
+  const contentOpacity = useTransform(smoothScroll, [0.4, 0.5], [0, 1]);
+  const contentY = useTransform(smoothScroll, [0.4, 0.5], [40, 0]);
 
-  const cardAnimations = useProfileCardTransforms(scrollYProgress);
+  const profileCardOpacity = useTransform(smoothScroll, [0.4, 0.55], [0, 1]);
+  const profileCardY = useTransform(smoothScroll, [0.4, 0.55], [40, 0]);
+  const profileCardScale = useTransform(smoothScroll, [0.4, 0.55], [0.95, 1]);
+
+  const cardAnimations = useProfileCardTransforms(smoothScroll);
 
   return (
     <section ref={containerRef} className="relative min-h-[350vh]">

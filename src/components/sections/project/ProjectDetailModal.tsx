@@ -22,7 +22,7 @@ export default function ProjectDetailButton({
       {!isOpen && (
         <motion.button
           onClick={() => setIsOpen(true)}
-          className="sm:w-16 sm:h-16 w-10 h-10 rounded-full bg-black/50 text-white text-2xl flex items-center justify-center shadow-xl"
+          className="sm:w-16 sm:h-16 w-10 h-10 rounded-full bg-black/50 text-white text-2xl flex items-center justify-center shadow-lg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           whileHover={{ scale: 1.1, rotate: 90 }}

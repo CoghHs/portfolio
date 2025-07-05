@@ -29,7 +29,7 @@ export default function ProjectSection() {
 
       {projectsData.map((project, index) => (
         <section key={project.id} className="relative h-[500vh]">
-          <div className="sticky -top-80 h-screen z-10">
+          <div className="sticky -top-[350px] h-screen z-10">
             <ProjectIntroSection index={index} project={project} />
           </div>
 

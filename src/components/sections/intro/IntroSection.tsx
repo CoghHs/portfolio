@@ -4,7 +4,7 @@ import { useIntroStore } from "@/store/introStore";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const introTexts = ["사용자 중심", "구조적 사고", "감각적 설계", "끈기와 집중"];
+const introTexts = ["사용자 중심", "구조적 사고", "감각적 설계", "소통과 공감"];
 
 export default function IntroSection() {
   const [phase, setPhase] = useState<"intro" | "outro" | "done">("intro");

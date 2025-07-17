@@ -121,7 +121,7 @@ export default function ProfileSection() {
               <h3 className="text-xl sm:text-2xl font-semibold text-white">
                 {title}
               </h3>
-              <p className="whitespace-pre-line text-sm sm:text-base leading-relaxed text-white/90">
+              <p className="whitespace-pre-line text-sm sm:text-lg leading-relaxed text-white/90">
                 {text}
               </p>
             </motion.div>
